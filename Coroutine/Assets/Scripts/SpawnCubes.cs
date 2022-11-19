@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class SpawnCubes : MonoBehaviour
@@ -8,13 +9,16 @@ public class SpawnCubes : MonoBehaviour
     [SerializeField] private GameObject _cubePrefab;
     [SerializeField] private float _spawnInterval = 0.04f;
     [SerializeField] private float _changeColorDelay = 0.2f;
+    [SerializeField] private float _recoloringTime = 0.2f;
 
     private int _rows = 20;
     private int _column = 20;
-    private List<GameObject> _listOfCubes = new List<GameObject>();
+    private readonly List<GameObject> _listOfCubes = new();
+    private WaitForSeconds _waitBeforeNewSpawn;
 
-    private void Awake()
+    private void Start()
     {
+        _waitBeforeNewSpawn = new WaitForSeconds(_spawnInterval);
         StartCoroutine(CubesSpawn());
     }
 
@@ -30,29 +34,44 @@ public class SpawnCubes : MonoBehaviour
         {
             for (int x = 0; x < _column; x++)
             {
-                var spawn = Instantiate(_cubePrefab);
-                _listOfCubes.Add(spawn);
                 var position = new Vector3(startX - x * stepX, startY - y * stepY, startZ);
-                spawn.transform.position = position;
-                yield return new WaitForSeconds(_spawnInterval);
+                _listOfCubes.Add(Instantiate(_cubePrefab,position,Quaternion.identity));
+                yield return _waitBeforeNewSpawn;
             }
         }
     }
-
-    public void OnClickButton()
+    [UsedImplicitly]
+    public void OnClickButtonChangeColors()
     {
-        StartCoroutine(ChangeColor());
+        StartCoroutine(ChangeCubesColors(_recoloringTime));
     }
+    
+   private IEnumerator ChangeCubesColors(float recoloringTime)
+   {
+       var randomColor = Random.ColorHSV(0f, 1f, 0.8f, 1f, 1, 1);
+       foreach (var cubes in _listOfCubes)
+       {
+           var cubeRenderer = cubes.GetComponent<Renderer>();
+           StartCoroutine(ChangeCubeColor(cubeRenderer,recoloringTime, randomColor));
+           yield return new WaitForSeconds(_changeColorDelay);
+       }
+   }
 
-    private IEnumerator ChangeColor()
-    {
-        var randomColor = Random.ColorHSV(0f, 1f, 0.8f, 1f, 1, 1);
-        foreach (var cubes in _listOfCubes)
-        {
-            cubes.GetComponent<Renderer>().material.color = randomColor;
-            yield return new WaitForSeconds(_changeColorDelay);
-        }
-    }
+   private IEnumerator ChangeCubeColor(Renderer cubeRenderer, float recoloringTime, Color finalColor)
+   {
+       var startColor = cubeRenderer.material.color;
+       var currentTime = 0f;
+
+       while (currentTime < recoloringTime)
+       {
+           var currentColor = Color.Lerp(startColor, finalColor, currentTime / recoloringTime);
+           cubeRenderer.material.color = currentColor;
+           currentTime += Time.deltaTime;
+
+           yield return null;
+       }
+       cubeRenderer.material.color = finalColor;
+   } 
 }
   
 

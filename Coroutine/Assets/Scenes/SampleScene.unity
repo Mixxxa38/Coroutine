@@ -528,6 +528,7 @@ MonoBehaviour:
   _cubePrefab: {fileID: 1174386631}
   _spawnInterval: 0.04
   _changeColorDelay: 0.2
+  _recoloringTime: 0.2
 --- !u!1 &1174386631
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +816,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: SpawnCubes, Assembly-CSharp
-        m_MethodName: OnClickButton
+        m_MethodName: OnClickButtonChangeColors
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

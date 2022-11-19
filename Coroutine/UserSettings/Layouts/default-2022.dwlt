@@ -116,10 +116,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 503, y: 321}
-  m_MaxSize: {x: 16192, y: 12117}
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 2008
+  controlID: 91
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,10 +141,10 @@ MonoBehaviour:
     y: 0
     width: 1446
     height: 947
-  m_MinSize: {x: 403, y: 321}
-  m_MaxSize: {x: 8096, y: 12117}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 1960
+  controlID: 41
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,10 +166,10 @@ MonoBehaviour:
     y: 0
     width: 1446
     height: 647
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 1961
+  controlID: 42
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 474
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -534,9 +534,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 582.23444, y: 175.57544, z: 85.34766}
+    m_Target: {x: 586.46063, y: 152.9705, z: 145.54985}
     speed: 2
-    m_Value: {x: 582.23444, y: 175.57544, z: 85.34766}
+    m_Value: {x: 586.46063, y: 152.9705, z: 145.54985}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -582,13 +582,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.00012428882, y: 0.9998091, z: -0.009307325, w: -0.014697371}
+    m_Target: {x: -0.0005579655, y: 0.99930197, z: 0.031179927, w: 0.018290358}
     speed: 2
-    m_Value: {x: -0.00012429374, y: 0.99984866, z: -0.009307694, w: -0.014697953}
+    m_Value: {x: -0.0005579902, y: 0.99934626, z: 0.031181308, w: 0.018291168}
   m_Size:
-    m_Target: 89.88078
+    m_Target: 45.409565
     speed: 2
-    m_Value: 89.88078
+    m_Value: 45.409565
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -644,9 +644,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7ac9ffff
-      m_LastClickedID: -13958
-      m_ExpandedIDs: f8f3fdfff8aaffff5eefffff2efbffff
+      m_SelectedIDs: bc590000
+      m_LastClickedID: 22972
+      m_ExpandedIDs: 32fbffffb2590000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -818,15 +818,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: "D:\\\u0443\u0447\u0435\u0431\u0430 IT\\\u043C\u043E\u0438 \u043A\u0430\u0440\u0430\u043A\u0443\u043B\u0438
-    \u0432 \u044E\u043D\u0438\u0442\u0438\\Coroutine"
+  m_LastProjectPath: C:\Users\Pc\Documents\GitHub\Coroutine\Coroutine
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 40810000
-    m_LastClickedID: 33088
-    m_ExpandedIDs: 00000000a680000000ca9a3b
+    m_SelectedIDs: 7c5a0000
+    m_LastClickedID: 23164
+    m_ExpandedIDs: 00000000705a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -854,7 +853,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a680000000ca9a3b
+    m_ExpandedIDs: 00000000705a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
